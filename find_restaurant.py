@@ -20,7 +20,8 @@ def findlocation(searchstring, google_api_key):
     # use httplib2 packages to get the response from google geocode API
     h = httplib2.Http()
     response, content = h.request(url, 'GET')
-    
+    content = str(content, encoding = "utf-8")    
+
     # parse the response and extract the latitude and longtitude
     result = json.loads(content)
     longtitude = result['results'][0]['geometry']['location']['lng']
@@ -48,16 +49,21 @@ def retrive_restaurant_inf(foursquare_client_id, foursquare_client_secret, latit
     search_type = 'restaurant'
     
     # the foursquare API endpoints
-    url = ('https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&v=20130815&ll={},{}&radius={}&query={}'.format(foursquare_client_id, foursquare_client_secret, latitude, longitude, radius, mealType))
+    url = ('https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&v=20130815&ll={},{}&radius={}&query={}'.format(foursquare_client_id, foursquare_client_secret, latitude, longitude, radius, search_type))
     
-     # use httplib2 packages to get the response from foursquare API
+    # use httplib2 packages to get the response from foursquare API
     h = httplib2.Http()
     text_response, text_content = h.request(url, 'GET')
+    text_content = str(text_content, encoding = "utf-8")
     text_results = json.loads(text_content)
-    
+ 
     # parse the response 
     restaurant_text_result = text_results['response']['venues']
     
+    # define a empty dictionery
+    restaurant_dict = {}
+	
+	
     for i in range(0, len(restaurant_text_result)):
         venue_id = restaurant_text_result[i]['id']
         restaurant_name = restaurant_text_result[i]['name']
@@ -65,6 +71,7 @@ def retrive_restaurant_inf(foursquare_client_id, foursquare_client_secret, latit
 
         url = ('https://api.foursquare.com/v2/venues/{}/photos?client_id={}&v=20150603&client_secret={}'.format(venue_id,foursquare_client_id,foursquare_client_secret))
         photo_response, photo_content = h.request(url,'GET')
+        photo_content = str(photo_content, encoding = "utf-8")
         photo_result = json.loads(photo_content)
                
         if photo_result['response']['photos']['count'] != 0:
@@ -88,5 +95,6 @@ foursquare_password = 'your foursquare API password'
 
 if __name__ == '__main__':
 	
-	restaurant_coordinate = findlocation('taipei', google_key)
+	restaurant_coordinate = findlocation('Melbourne', google_key)
 	restaurant_inf_dict = retrive_restaurant_inf(foursquare_id, foursquare_password, restaurant_coordinate[0], restaurant_coordinate[1])
+
