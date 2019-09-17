@@ -61,10 +61,9 @@ def retrive_restaurant_inf(foursquare_client_id, foursquare_client_secret, latit
     restaurant_text_result = text_results['response']['venues']
     
     # define a empty dictionery
-    restaurant_dict = {}
-	
-	
-    for i in range(0, len(restaurant_text_result)):
+    restaurant_dict = {}    
+    #for i in range(0, len(restaurant_text_result)):
+    for i in range(0, 1):
         venue_id = restaurant_text_result[i]['id']
         restaurant_name = restaurant_text_result[i]['name']
         restaurant_address = restaurant_text_result[i]['location']['formattedAddress']
@@ -95,6 +94,6 @@ foursquare_password = 'your foursquare API password'
 
 if __name__ == '__main__':
 	
-	restaurant_coordinate = findlocation('Melbourne', google_key)
+	restaurant_coordinate = findlocation('taipei', google_key)
 	restaurant_inf_dict = retrive_restaurant_inf(foursquare_id, foursquare_password, restaurant_coordinate[0], restaurant_coordinate[1])
 
