@@ -8,6 +8,13 @@ from sqlalchemy.types import *
 BaseModel = declarative_base()
 
 
+class User(BaseModel):
+    __tablename__ = 'user'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    account = Column(String(512))    
+    password = Column(String(20))
+
+
 class RestaurantInf(BaseModel):
     __tablename__ = 'RestaurantInf'
     restaurant_id = Column(Integer, primary_key=True, autoincrement=True)
