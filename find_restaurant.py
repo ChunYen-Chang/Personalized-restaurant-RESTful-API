@@ -83,17 +83,3 @@ def retrive_restaurant_inf(foursquare_client_id, foursquare_client_secret, latit
         restaurant_dict[str(i)] = {'name': restaurant_name, 'addr': restaurant_address, 'img_url': photo_url}
     
     return restaurant_dict
-	
-	
-# settings
-google_key = 'your google API key'
-
-foursquare_id = 'your foursquare API ID'
-foursquare_password = 'your foursquare API password'
-
-
-if __name__ == '__main__':
-	
-	restaurant_coordinate = findlocation('taipei', google_key)
-	restaurant_inf_dict = retrive_restaurant_inf(foursquare_id, foursquare_password, restaurant_coordinate[0], restaurant_coordinate[1])
-
