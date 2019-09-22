@@ -1,0 +1,4 @@
+consumer_api_key = YOUR CONSUMER API KEY
+consumer_api_secret_key = YOUR CONSUMER API SECRET KEY
+access_token = YOUR ACCESS TOKEN
+access_token_secret = YOUR ACCESS SECRET TOKEN
