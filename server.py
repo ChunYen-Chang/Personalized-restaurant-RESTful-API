@@ -189,5 +189,25 @@ def get_update_delete_restaurant(onerestaurantid):
 		return 'Deletion is done'
 
 
+@app.route('/TweetInf')
+@auth.login_required
+def get_tweet_inf():
+	'''
+	Description: This function allow users to get a Tweet information
+				
+	Parameters: None
+	
+	Returns: None
+	
+	Note: This function is protected by auth.login_required, users need to pass the verification in the
+			beginning
+	'''
+        all_tweet = session.query(Tweet).all()
+        all_tweet_dict = {}
+        for i in all_tweet:
+                all_tweet_dict[i.tweet_id] = {'tweet_user':i.tweet_user, 'tweet_text':i.tweet_text, 'tweet_text_time':i.tweet_text_time}
+        return jsonify(all_tweet_dict)
+
+
 if __name__ == '__main__':
 	app.run(host="0.0.0.0", port=80)
