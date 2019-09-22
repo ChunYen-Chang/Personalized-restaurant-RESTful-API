@@ -10,7 +10,7 @@ from sqlalchemy.types import *
 BaseModel = declarative_base()
 
 
-# define the User and RestaurantInf class
+# define the User, RestaurantInf, and Tweet class
 class User(BaseModel):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -25,6 +25,14 @@ class RestaurantInf(BaseModel):
     address = Column(String(512))
     photo = Column(String(512))
  
+
+class Tweet(BaseModel):
+    __tablename__ = 'Tweet'
+    tweet_id = Column(Integer, autoincrement=True, primary_key=True)
+    tweet_user = Column(String(512))
+    tweet_text = Column(String(512))
+    tweet_text_time = Column(String(512))
+
  
 # create user and Restaurant table in Mysql database    
 engine = create_engine("mysql+mysqlconnector://id:pw@ec2-54-68-247-255.us-west-2.compute.amazonaws.com:3306/restaurant")
