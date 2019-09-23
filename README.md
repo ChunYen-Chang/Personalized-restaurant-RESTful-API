@@ -22,7 +22,7 @@ architecture.
 #### *SYSTEM ARCHITECTURE*
 
 <p align="center">
-  <img width="700" height="500" src="https://github.com/ChunYen-Chang/Personalized-restaurant-RESTful-API/blob/master/image/system_structure.jpg">
+  <img width="700" height="500" src="https://github.com/ChunYen-Chang/Personalized-restaurant-RESTful-API/blob/master/image/system_structure_v2.jpeg">
 </p>
 
 Generally speaking, this project builds a web server Flask in an AWS EC2 instance. This server provides the interface for users to 
