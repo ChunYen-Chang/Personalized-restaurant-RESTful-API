@@ -50,7 +50,7 @@ interact with, and it has below functons.
 #### HOW TO RUN THE PROJECT
 If you want to run this project, you need two EC2 instance. The first EC2 instance holds the Flask sever, and, the second EC2 instance is in charge of receiving streaming data from Tweet API, communicating with Redis, performing sentiment analysis on Tweet data, and sending result to Mysql database. In this section, the first part will talk about how to set up an EC2 instance which holds the Flask server, and, the second part will focus on how to set an EC2 instance which is in charge of receiving streaming data from Tweet API, communicating with Redis, performing sentiment analysis on Tweet data, and sending result to Mysql database.  
 
-**EC2 instance holding Flask server:**
+**PART ONE: EC2 instance holding Flask server:**
 1. Create an AWS EC2 instance in your AWS account
 ![](https://github.com/ChunYen-Chang/Personalized-restaurant-RESTful-API/blob/master/image/aws1.jpg)
   
@@ -69,8 +69,9 @@ If you want to run this project, you need two EC2 instance. The first EC2 instan
 7. Type `sudo python3 server.py` in your terminal to start the Falsk Web server  
 
 8. Your server is running. Enjoy it!  
-
-**EC2 instance which is in charge of receiving streaming data from Tweet API, communicating with Redis, performing sentiment analysis on Tweet data, and sending result to Mysql database:**  
+  
+  
+**PART TWO: EC2 instance which is in charge of receiving streaming data from Tweet API, communicating with Redis, performing sentiment analysis on Tweet data, and sending result to Mysql database:**  
 
 1. Install Redis in this EC2 instance
 
