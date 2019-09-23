@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500" height="270" src="https://github.com/ChunYen-Chang/Personalized-restaurant-RESTful-API/blob/master/image/flask_pic.jpg">
+  <img width="800" height="350" src="https://github.com/ChunYen-Chang/Personalized-restaurant-RESTful-API/blob/master/image/project_logo.jpg">
 </p>
   
   
