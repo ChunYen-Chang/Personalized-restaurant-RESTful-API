@@ -1,0 +1,4 @@
+mysql_host = YOUR Mysql host
+mysql_user = YOUR Mysql user
+mysql_passwd = YOUR Mysql password
+mysql_database = YOUR Mysql database
