@@ -3,7 +3,7 @@
 </p>
   
   
-# Personalized restaurant RESTful API
+# Restaurant Information Searching System with RESTful APIs
 
 #### *PROJECT BACKGROUND and DESCRIPTION*
 Are you struggling for finding a **GOOD** restaurant at the place you want to go? Do you feel like it is **troublesome** to
